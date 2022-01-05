@@ -1,6 +1,6 @@
 "use strict";
 
-`const { hasNewline } = require("../../common/util.js");
+const { hasNewline } = require("../../common/util.js");
 const {
   builders: { join, hardline },
   utils: { replaceTextEndOfLine },

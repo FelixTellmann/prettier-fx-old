@@ -259,6 +259,7 @@ function shouldGroupFirstArg(args) {
     return true;
   }
 
+  /* Felix Tellmann adjustment for useCallback */
   return (
     !hasComment(firstArg) &&
     (firstArg.type === "FunctionExpression" ||
@@ -266,8 +267,9 @@ function shouldGroupFirstArg(args) {
         firstArg.body.type === "BlockStatement")) &&
     secondArg.type !== "FunctionExpression" &&
     secondArg.type !== "ArrowFunctionExpression" &&
-    secondArg.type !== "ConditionalExpression" &&
-    !couldGroupArg(secondArg)
+    secondArg.type !== "ConditionalExpression"  &&
+    secondArg.type === "ArrayExpression" &&
+    (secondArg.elements.length <= 4 || !couldGroupArg(secondArg))
   );
 }
 
