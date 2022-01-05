@@ -1,6 +1,6 @@
 {
   "name": "prettier-fx",
-  "version": "2.6.0-dev",
+  "version": "2.6.1-dev",
   "description": "Prettier-fx is an opinionated code formatter",
   "bin": "./bin/prettier.js",
   "license": "MIT",
