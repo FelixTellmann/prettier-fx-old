@@ -6,6 +6,9 @@ const {
 } = require("../../document/index.js");
 const { printDanglingComments } = require("../../main/comments.js");
 
+// [prettierx]
+const { removeLines } = require("../../document/doc-utils.js");
+
 const {
   hasComment,
   CommentCheckFlags,
@@ -214,9 +217,11 @@ function printModuleSpecifiers(path, options, print) {
       }
 
       const canBreak =
-        groupedSpecifiers.length > 1 ||
-        standaloneSpecifiers.length > 0 ||
-        node.specifiers.some((node) => hasComment(node));
+        // prettierx: importFormatting
+        options.importFormatting !== "oneline" &&
+        (groupedSpecifiers.length > 1 ||
+          standaloneSpecifiers.length > 0 ||
+          node.specifiers.some((node) => hasComment(node)));
 
       if (canBreak) {
         parts.push(

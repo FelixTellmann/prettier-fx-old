@@ -44,6 +44,61 @@ module.exports = {
     oppositeDescription:
       "Do not print semicolons, except at the beginning of lines which may need them.",
   },
+  /* NEEDS REFINEMENT - FELIX TELLMANN*/
+  breakLongMethodChains: {
+    category: CATEGORY_JAVASCRIPT,
+    type: "boolean",
+    default: false,
+    description:
+      "Break method chains with more than 3 method calls, like Prettier 1.x.",
+  },
+  indentChains: {
+    category: CATEGORY_JAVASCRIPT,
+    type: "boolean",
+    default: true,
+    description: "Put indents at the start of chained calls.",
+    oppositeDescription: "Disable indents at the start of chained calls.",
+  },
+  allowBreakAfterOperator: {
+    category: CATEGORY_JAVASCRIPT,
+    type: "boolean",
+    default: true,
+    description: "Allows assignment operators to break for long calls.",
+    oppositeDescription: "Disable indents at the start of chained calls.",
+  },
+  importFormatting: {
+    category: CATEGORY_JAVASCRIPT,
+    type: "choice",
+    default: "auto",
+    description:
+      "Formatting of import statements, may be `oneline` to avoid conflict with" +
+      ' VSCode "Organize Imports" feature.',
+    choices: [
+      {
+        value: "auto",
+        description: "automatic formatting, like Prettier",
+      },
+      {
+        value: "oneline",
+        description: "keep import statements on one line",
+      },
+    ],
+  },
+  /* NEEDS REFINEMENT - END */
+  exportCurlySpacing: {
+    category: CATEGORY_JAVASCRIPT,
+    type: "boolean",
+    default: true,
+    description: "Put spaces between export curly braces.",
+    oppositeDescription: "Disable spaces between export curly braces.",
+  },
+  importCurlySpacing: {
+    category: CATEGORY_JAVASCRIPT,
+    type: "boolean",
+    default: true,
+    description: "Put spaces between import curly braces.",
+    oppositeDescription: "Disable spaces between import curly braces.",
+  },
   singleQuote: commonOptions.singleQuote,
   jsxSingleQuote: {
     since: "1.15.0",
