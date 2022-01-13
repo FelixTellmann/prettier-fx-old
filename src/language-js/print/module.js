@@ -236,6 +236,16 @@ function printModuleSpecifiers(path, options, print) {
             "}",
           ])
         );
+      } else if (options.importFormatting === "oneline") {
+        parts.push(
+          group([
+            "{",
+            options.bracketSpacing ? " " : "",
+            join(", ", groupedSpecifiers),
+            options.bracketSpacing ? " " : "",
+            "}",
+          ])
+        );
       } else {
         parts.push([
           "{",
