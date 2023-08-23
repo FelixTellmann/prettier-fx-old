@@ -504,6 +504,7 @@ function printJsxExpressionContainer(path, options, print) {
   const node = path.getValue();
   const parent = path.getParentNode(0);
 
+  /* FELIX TELLMANN */
   const shouldInline =
     node.expression.type === "JSXEmptyExpression" ||
     (!hasComment(node.expression) &&

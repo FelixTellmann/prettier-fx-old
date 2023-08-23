@@ -236,6 +236,7 @@ function printTernary(path, options, print) {
   const firstNonConditionalParent = currentParent || parent;
   const lastConditionalParent = previousParent;
 
+  /* Felix TEllmann ! */
  /* if (
     isConditionalExpression &&
     (isJsxNode(node[testNodePropertyNames[0]]) ||

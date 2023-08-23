@@ -289,6 +289,7 @@ function printTupleType(path, options, print) {
   const typesField = node.type === "TSTupleType" ? "elementTypes" : "types";
   const types = node[typesField];
   const isNonEmptyTuple = isNonEmptyArray(types);
+  /* Maybe Felix TEllmann */
   const hasRest = isNonEmptyTuple && getLast(types).type === "TSRestType";
   const bracketsDelimiterLine = isNonEmptyTuple ? softline : "";
   return group([
